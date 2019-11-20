@@ -1,0 +1,96 @@
+Component Event :
+==============================================================================================
+Create Event :(CMPEVENT)
+<aura:event type="COMPONENT">
+<aura:attribute name='username' type='String' />
+<aura:attribute name='mobilenumber' type='String' />
+</aura:event>
+==============================================================================================
+Register Event and Fire Event:
+	Child Component (ChildCMP) :
+	<aura: component implements="force:appHostable,force:hasRecordId,
+						forceCommunity:availableForAllPageTypes,
+						flexipage:availableForAllPageTypes,
+						flexipage:availableForRecordHome,force:lightningQuickAction" access="global">
+	<aura:attribute name="childUserName" type="String"/>
+	<aura:attribute name="chilsMobileNumber" type="String"/>
+	<aura:registerEvent name='cmpEvent' type="c:CMPEVENT" />
+	<lightning:input type="text" label="username" value="{!v.childUserName}" />
+	<lightning:input type="text" label="mobileno" value="{!v.childMobileNumber}" />
+	<lightning:button variant:"brand" label="Send" onclick="{c.SendDataToParent}" />
+	</aura>
+	Child Component Controller JS
+	({
+	     SendDataToParent:function(component,event,helper)
+		 {
+		   var cmpEvt = component.getEvent("cmpEvent");
+		   cmpEvt.setParams({
+		     "username":component.get("v.childUserName");
+			 "mobilenumber":component.get("v.childMobileNumber");
+		   });
+		   cmpEvt.fire();
+		 },
+	})
+=====================================================================================================	
+Handling Event
+	Parent Component (ParentCMP)
+	<aura:component implements="force:appHostable,force:hasRecordId,force:lightningQuickAction,
+								flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,
+								forceCommunity:availableForAllPageTypes" 
+								access="global" >							
+		<aura:attribute name="parentUserName" type="String"/>
+		<aura:attribute name="parentMobileNumber" type="String"/>	
+		<aura:handler name="cmpEvent" event="c:CMPEVENT" action="{!c.handleEventCMP}" />
+		Welcome {!v.parentUserName}{!v.parentMobileNumber}										<c:ChildCMP />
+	</aura>	
+	Parent Controller JS:		
+		handleEventCMP : function(cmp,event,helper)
+		{
+		  component.set("v.parentUserName",event.getParam("username"));
+		  component.set("v.parentMobileNumber",event.getParam("mobilenumber"));
+		},
+		showToast:function(component,event,handler)
+		{
+		   var show=$A.get("e.force:showToast");
+		   show.setParams({
+		   type="success",
+		   title"success",
+		   message="Passed successfully!",
+		   mode="sticky"
+		   });
+		   show.fire();
+		}
+		
+====================================================================================================		
+		
+AURA METHOD
+	CHILD CMP:
+	<aura:method name='childMethod' action='{!c.RetVal}' access='PUBLIC'>
+        <aura:attribute name='param1' type='String'/>
+         <aura:attribute name='param2' type='String'/>
+    </aura:method>
+	
+	 RetVal:function(component, event, helper)
+    {
+        var params=event.getParam('arguments');
+        alert('Calling from Parent :) '+params.param1 +params.param2);
+    }
+	
+	PARENT CMP
+	
+	 <lightning:button label="Call Child Method" onclick="{!c.CallChildMethod}"/>
+	  CallChildMethod:function(component, event, helper) {
+        var chldMet = component.find('myChildCmp');
+        chldMet.childMethod('Avi','Narnaware');
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+

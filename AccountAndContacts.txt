@@ -1,0 +1,5 @@
+Account and Contacts
+===========================
+Accounts are companies that you're doing business with, and contacts are the people who work for them.
+
+If you’re doing business with a single person, like a solo contractor or an individual consumer, you use a special account type called a person account. Person accounts are similar to business accounts, but because they’re meant to record information about an individual person, person accounts don’t have their own contacts.

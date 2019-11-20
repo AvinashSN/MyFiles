@@ -1,0 +1,35 @@
+TRIGGER :
+	Context
+		System and User. Trigger will run System Mode Only.
+	Before   
+		Insert, Update, Delete, 
+	After
+		Insert, Update, Delete, Undelete
+	Context Variables
+		IsExecuting, isBefore, isAfter, New, NewMap, Old, OldMap, isInsert, isUpdate, isDelete
+	Best Prctice To write Trigger.
+		Always Write Single Trigger for Object. As per salesforce documentation, there is no confirmation of executing sequence of Trigger.
+		Try to write  bulkify trigger.
+		Always use context variable
+		Try to avoid SOQL and DML in trigger itself.
+		Try to write all logic in helper class
+		Write test class for trigger. code coverage should be at least 1 %
+	Calling API from Trigger.
+		we can callout rest api in trigger using @future(callout=true)
+		We can check if this is Future Method or not using System.isFuture
+	We can show Error message using addError() method.
+	
+	Syntax:
+	Trigger myTrigger on Account(before Insert, before Update)
+	{
+	   if(Trigger.isBefore)
+		{
+		 if(Trigger.isInsert)
+		 {
+		    for(Account act : Trigger.New)
+			{
+			  
+			}
+		 }
+		}
+	}

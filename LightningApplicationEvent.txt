@@ -1,0 +1,83 @@
+Application Event
+===========================================================================
+Create Event (APPEVENT)
+<aura:event type="APPLICATION" Description="" >
+	<aura:attribute name="eventmsg" type="String" />
+</aura:event>
+
+===========================================================================
+Create Child component(ChildCMP) and register event
+
+<aura:component implement="force:appHostable,
+				force:hasRcordId,
+				force:lightningQuickAction;
+				flexipage:availableforallpagestype;
+				forceCommunity:availableForAllPagesType;
+				flexipage:availableForRecordHome" access="global">
+				
+	<aura:registerEvent name="myAppEvent" type="c:APPEVENT" />
+	
+	<lightning:button label="Call Application Event" onclick={!c.handleApplicationEvent}" />
+</aura:component>
+=========================
+ChildCMP.JS(Controller)
+
+handleApplicationEvent:function(component,event,helper)
+{
+ var myappevt = $A.get("e.c:APPEVENT");
+ myappevt.setParams({"eventmsg","Welcome to APPLICATION EVENT"});
+ myappevt.fire();
+}
+
+=============================================================================
+Create Parent component(ParentCMP) and Write Handler
+
+<aura:component implements="force:appHostable,
+				force:hasRcordId,
+				force:lightningQuickAction;
+				flexipage:availableforallpagestype;
+				forceCommunity:availableForAllPagesType;
+				flexipage:availableForRecordHome" access="global" >
+	<aura:attribute name="appEvtMesg" type="String"/>
+	<aura:handler event="c:APPEVENT" action="{!c.handleAPPEVT}" />	
+	{!v.appEvtMesg}
+</aura:component>
+
+ParentCMP.JS(controller)
+ ({
+	 handleAPPEVT:function(component,event,helper)
+	 {
+	   component.set("v.appEvtMesg",event.getParam("eventmsg"));
+	 }
+ })
+===========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+Lightning Data Service:
+	Use Lightning Data Service to load, create, edit, or delete a record in your component without requiring Apex code. 
+	Lightning Data Service handles sharing rules and field-level security for you. 
+	In addition to not needing Apex, Lightning Data Service improves performance and user interface consistency.
+	
+		Loading a Record
+			This component can be added to a record home page in the Lightning App Builder, or as a custom action.
+			force:hasRecordId interface.
+			add the force:recordData tag to your component
+				<force:recordData aura:id="recordLoader"
+				recordId="{!v.recordId}"
+				targetFields="{!v.simpleRecord}"
+				targetError="{!v.recordError}"
+				recordUpdated="{!c.handleRecordUpdated}"
+				/>
+				
+		Saving a Record
+			It’s intended for use on a record page. 
+			To perform the save operation, call saveRecord on the force:recordData component from the appropriate controller action handler
+			The record ID is supplied by the implicit recordId attribute added by the force:hasRecordId interface.
+				<force:recordData aura:id="recordHandler"
+				recordId="{!v.recordId}"
+				layoutType="FULL"
+				targetRecord="{!v.record}"
+				targetFields="{!v.simpleRecord}"
+				targetError="{!v.recordError}"
+				mode="EDIT"
+				recordUpdated="{!c.handleRecordUpdated}"
+				/>
+				
+		Creating a Record
+			To create a record using Lightning Data Service, declare force:recordData without assigning a recordId.
+			Next, load a record template by calling the getNewRecord function on force:recordData.
+			Finally, apply values to the new record, and save the record by calling the saveRecord function on force:recordData.
+			
+		Deleting a Record
+			To delete a record using Lightning Data Service, 
+			call deleteRecord on the force:recordData component, 
+			and pass in a callback function to be invoked after the delete operation completes.
+		
+		Record Changes
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

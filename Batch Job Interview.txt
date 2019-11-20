@@ -1,0 +1,49 @@
+Batch Job
+
+Basically we have three method in Batch Job which are implemented by Database.Batchable
+	-Start
+	-Execute
+	-Finish 
+	
+global class myBatchClass implement Database.Batchable<sObject>, Database.AllowsCallouts(Allow API callout), Database.Stateful(Maintain the state throughout transaction. Variable can be access in all method),Database.RaisesPlatformEvents(Call Platform events from batchjob)
+{
+     String query='Select Id ,name from Account'; 
+	 global database.queryLocator/Iterable<sObject>	 Start(database.batchableContext bc)
+	 {
+	  return database.getQyeryLocator(query);
+	 }
+	 global void Execute(database.batchableContext bc, List<sObject> scope)
+	 {	  
+	   //Main logic is here
+	 }
+	 
+	 global void finish(database.batchableContext bc)
+	 {	 
+	  //Retireve the current job information
+	  AsyncApexJob a=[Select Id , Status, NumberOfError, JobItemProcessed, TotalJobItems, CreatedBy.Email from AsyncApexJob where Id =:bc.getJobId()];
+	  //Sending Mail
+	  Messaging.SingleEmailMessage mail=new Messaging.SingleEmailMessage();
+	  String[] toAddress= new String[]{a.CreatedBy.Email};
+	  mail.setToAddress(toAddress);
+	  mail.setSubject('Status :'+ a.Status);
+	  mail.setPlainTextbody(
+	  'The batch apex job processed '+ a.TotalJobItems + 'batches with : '+ NumberOfError+'failures'
+	  );
+	  Messaging.SendEmail(new Messaging.SingleEmailMessage[]{mail});
+	 }
+
+}
+-	database.queryLocator : Bypass the soql record limit. it support upto 50 million records.
+-	If you use an iterable, the governor limit for the total number of records retrieved by SOQL queries is still enforced.
+-	Each execution of a batch Apex job is considered a discrete transaction. For example, a batch Apex job that contains 1,000 records and is executed without the optional scope parameter from Database.executeBatch is considered five transactions of 200 records each. The Apex governor limits are reset for each transaction. If the first transaction succeeds but the second fails, the database updates made in the first transaction are not rolled back.
+-	ID batchprocessID = Database.executeBatch(mybatch); // execute batch once from dev console. By using this ID you can get information from AsyncApexJob.
+-	After Database.executeBatch(myBatchJob), this job is placed in Apex Flex Queue and its status set to  Holding
+-	If Apex flex Queue has maximum number of 100 job then Data.executeBatch() thrown LimitException and doesn't add job in queue.
+-	you can reorder this job sequence.  
+-	Boolean isSuccess = System.FlexQueue.moveBeforeJob(jobToMoveId, jobInQueueId);
+-	JOB Status : Holding, Queued, Preparing, Processing, Aborted, Completed, Failed
+-	System.scheduleBatch(batchName); to run batch from Developer console.
+-	Up to 5 batch jobs can be queued or active concurrently.
+-	Up to 100 Holding batch jobs can be held in the Apex flex queue.
+-	In a running test, you can submit a maximum of 5 batch jobs.
+

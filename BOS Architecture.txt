@@ -1,0 +1,16 @@
+Customer,CSR, Mobile App, Partner Portal
+
+BOS - Salesforce - JWT - Json Web Token, AT : Access Token , RT : Refresh Token
+VZ1 PRM SF instance- Salesforce
+Salesforce TIBCO - > Data warehoue Extract and publish data to SF through informatica.
+
+TLS1.2: Transport Layer Security?
+
+What is HP Voltage? 
+
+What is secure DB location?
+
+What is red zone firewall? Green Zone Firewall, DVS/PCI Firewall
+What are rule and conditions for red zone firewall?
+
+What is role bases access for API?

@@ -1,0 +1,60 @@
+FLOW OF SLAES CLOUD OBJECT
+
+Campaign -> Lead -> Account Contact Opportunity
+Contract ->Quote -> Order -> Product ->  Pricebook entries
+
+Salecloud Objects
+ 
+ Campaign
+ Lead
+ Account
+ Contact
+ Opportunity
+ Contract
+ Quote
+ Order
+ Product
+ PricebookEntries
+ 
+Service Cloud
+ Account
+ Contact
+ Case
+ Solutions
+ 
+ web to case
+ Email to case
+ Phone to case
+ 
+ 
+ FLOW OF SALES CLOUD Object
+
+Campaign->Lead->Account,Contact,Opportunity,
+Contract ->Quote -> order -> Product -> PricebookEntries
+
+Objects in sales cloud
+	Campaign
+	Lead
+	Account
+	Contact
+	Opportunity
+	Contract
+	Quote
+	Order
+	Product
+	PriceBookEntries
+	
+	
+	Web to Lead
+	
+Object in Service cloud
+	Account
+	Contact
+	Case
+	Solutions
+	
+	Features
+	Web to Case
+	Email to case
+	Phone to case
+	

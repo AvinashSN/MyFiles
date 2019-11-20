@@ -1,0 +1,44 @@
+<!--SampleApplicationEvent.evt-->
+<aura:event type="Application" description="Sample Application Event">
+    <aura:attribute name="message" type="String" />
+</aura:event>
+
+<!--Component1.cmp-->
+<aura:component>
+    <aura:registerEvent name="SampleApplicationEvent" type="c:SampleApplicationEvent"/>
+    <lightning:button label="Click to fire the event" variant="brand" onclick="{!c.component1Event}"/>
+</aura:component>
+
+({
+    component1Event : function(cmp, event,helper) { 
+        //Get the event using event name. 
+        var appEvent = $A.get("e.c:SampleApplicationEvent"); 
+        //Set event attribute value
+        appEvent.setParams({"message" : "Welcome "}); 
+        appEvent.fire(); 
+    }
+})
+
+<!--Component2.cmp-->
+<aura:component>
+    <aura:attribute name="eventMessage" type="String"/> 
+    <aura:handler event="c:SampleApplicationEvent" action="{!c.component2Event}"/>
+    <div class="slds-m-around_xx-large">
+        <p>{!v.eventMessage}</p> 
+    </div>
+</aura:component>
+({
+    component2Event : function(cmp, event) { 
+        //Get the event message attribute
+        var message = event.getParam("message"); 
+        //Set the handler attributes based on event data 
+        cmp.set("v.eventMessage", message + 'Biswajeet');         
+    }
+})
+==========================================================================================
+<aura:application extends="force:slds">
+    <c:Component1/>
+    <c:Component2/>
+</aura:application>
+
+

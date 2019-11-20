@@ -1,0 +1,3 @@
+POST Method URL:
+
+https://mysms-dev-ed.my.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9ZL0ppGP5UrCxM5OH7TtJeZyrsu5k8TCf3JLgAjha2WD_bxKZSYC5.5qc9wOuUjC9hUDXcKihfVP4OHXX&client_secret=837AF2E524C74EDDFF409C12AAC747B4FB126EDAF50C52DAB32A3B8A6A352785&username=avinashnarnaware24@gmail.com&password=Deepanti_49fFqFouPivAftzKyzPB9kYpeRz

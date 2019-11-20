@@ -1,0 +1,32 @@
+Lightning Datatable :
+ Column Data : 
+	 label
+	 fieldName
+	 type - text, email, phone, date, datetime, currency, Percentage, url , { type: 'action', typeAttributes: { rowActions: actions } }
+	 typeAttribute -  {label: 'Website', fieldName: 'website', type: 'url', typeAttributes: { target: '_self'}},
+	 initialWidth
+	 sortable
+  Tags
+	keyField
+	class
+	title
+	columns
+	data
+	hidecheckboxcolumn(default=false)
+	resizeColumnDisabled
+	minColumnWidth
+	maxColumnWidth
+	resizeStep
+	sortedBy
+	sortedDirection(asc/desc)
+	defaultSortDirection
+	onrowselection
+	onsort
+	onrowaction
+	showRowNumberColumn
+	enableInfiniteLoading
+	loadMoreOffset
+	onloadmore
+	
+	
+ 

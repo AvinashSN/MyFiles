@@ -1,0 +1,17 @@
+Tenses:
+
+Past Tense
+	Simple Past
+	Past continous
+	Past Perfect
+	Past Perfect Continous
+Present Tense
+	Simple Present
+	Present Continous
+	Present Perfect
+	Present Perfect Continous
+Future Tense
+	Simple Future
+	Future Continous
+	Future Perfect
+	Future Perfect Continous

@@ -1,0 +1,119 @@
+How to emebed Visualforce Page in lightning component?
+By Using iframe and set ClickJack true. clickjack protection settings available in Setup (under session settings) allow you to secure your Visualforce pages against user interface redress attacks. 
+
+How to call Javascript Controller Method into another method? 
+		$A.enqueAction(component.get('c.bar'));
+		OR
+		var a = component.get('c.bar');
+        $A.enqueueAction(a);
+
+What are the events in lightning? Component,Application,System (Handler init)
+
+What is difference between Application and Component Event?
+
+What is Aura method?
+
+What are the options available at the time of creating lightning component?
+	Lightning Tab, Page, RecordPage,Community Page, QuickAction
+	
+Which interface we are supposed to implement so that a lightning component can be used as a Tab? force:appHostable
+
+What are the different Lightning component bundles?
+	a. Component
+	b. Controller
+	c. Helper
+	d. Style
+	e. Document
+	f. Design
+	g. SVG
+	h. Rendrer
+
+Which parts of Lightning Components are server-side and which are client-side ? 
+Apex Controller @AuraEnabled (Server Side)
+Controller.js (Client Side)
+
+Can we make one component inherit styles/CSS from a parent component, or must we always define it in the component ? Yes
+
+What is the use of the aura:method tag in Lightning ? pass parameter from Parent to child.
+
+Can we Include One Lightning component to another ? Yes
+
+Is there any limit on how many component to have in one Application? No limit
+
+Where we can display lightning component?
+
+Lightning component can be displayed at following places:
+1. Lightning Experience
+2. Salesforce1 App
+3. Template-based Community
+4. Standalone Lightning App
+5. Visualforce Pages (Using Lightning out )
+
+What is aura:registerevent in lightning component? To register event in child componenet. 
+
+How can we extend any component?
+To make a component extendable we need to set value of ‘extensible’ attribute as ‘true’ of the aura:component tag.
+
+When a component extends another component it inherits all of the helper methods and attributes.
+
+
+How to register, fire and handle a component and application event?
+
+We register an event by by using the following code
+
+<aura:registerEvent name=”sampleComponentEvent” type=”c:compEvent”/>
+We fire event as shown below:
+var compEvent = cmp.getEvent(“sampleComponentEvent”);
+compEvent.fire();
+Handle component event as below :
+<aura:handler name=”sampleComponentEvent” event=”ns:eventName”
+    action=”{!c.handleComponentEvent}” phase=”capture” />
+
+Handle Application event as below:
+<aura:handler event=”c:appEvent” action=”{!c.handleApplicationEvent}”/>
+
+Let’s say that you have an app myApp.app that contains a component myCmp.cmp with a ui:button component. During initialization, the init() event is fired in what order?
+
+ui:button, ui:myCmp, and myApp.app.
+
+How to implement Caching in Lighting? @AuraEnabled(cache=true)
+
+Why do we use $A.enqueueAction(action)?
+
+To obtain a reference to a static resource in JavaScript code, use $A.get(‘$Resource.resourceName’)
+
+Let’s say you have several buttons that reuse the same onclick handler. How will you retrieve the name of the button that fired the event?
+ Use event.getSource() in the client-side controller to get the button component that was clicked
+ getLocalId() to get the aura:id of the clicked button.
+
+List of Global value providers?
+
+$globalID
+$Browser
+$Label
+$Locale
+$Resource
+
+What are value providers in Salesforce Lightning ?
+Value providers helps use to access data in Lightning Application .They are two value providers as v(View) and c(controller)
+v is component attribute set which helps to access component attribute values in markup
+c is component controller helps us to link with event handlers and action for the component
+
+How to make quick lightning action?
+Add the force:lightningQuickAction or force:lightningQuickActionWithoutHeader interface to a Lightning component 
+
+What are Local and Global ids with respect to lightning component?
+
+
+What is Lightning Data Services?
+They are similar to a standard controller in Apex coding, advantages of using lightning Data service are mentioned below
+1. Use Lightning Data Service to load, create, edit, or delete a record in your component without requiring Apex code.
+2. Lightning Data Service handles sharing rules and field-level security for you.
+3. In addition to not needing Apex, Lightning Data Service improves performance and user interface consistency.
+
+What is the use of force:hasRecordId interface?
+Add the force:hasRecordId interface to a Lightning component to enable the component to be assigned the ID of the current record
+
+
+What is Salesforce Lightning Design System (SLDS)? make just like bootstrap.
+

@@ -1,0 +1,112 @@
+SFDX Commands
+
+sfdx force:project:create –projectname mysms
+sfdx force:auth:web:login (Production)
+
+sfdx force:source:web:login -r https://test.salesforce.com
+
+sfdx force:org:open -u sfdcmysms
+let’s create the package.xml (Copy and Paste)
+sfdx force:mdapi:retrieve -r metadata -u sfdcmysms -x package.xml
+	unzip unpackage.zip file into metadata
+	
+Deployment:
+
+sfdx force:mdapi:deploy -c -f ../mdAPIZip/unpackaged.zip -u sfdcmysms -w 10
+or
+sfdx force:mdapi:deploy -c -d ../mdAPIZip/unpackaged -u sfdcmysms -w 10u 
+
+====================================================================================
+https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_develop_any_org.htm
+
+force:source:deploy
+force:source:retrieve
+force:source:delete
+force:source:push
+force:source:pull
+force:source:convert
+force:org:create (if your scratch org definition contains scratch org settings, not org preferences)
+=====================================================================================================
+
+GIT :
+Git: Clone :https://github.com/AvinashSN/productionRepo.git
+Git: Create Branch.custom-object-changes
+sfdx force:auth:web:login
+force:source:retrieve -x package.xml
+In VS Code, select the Source Control icon Source Control icon.
+Enter a commit comment, then click the Commit icon Commit icon.
+Click Yes to add and commit the files.
+From the VS Code command palette, select Git: Push To.
+Select the origin repository.
+
+Create a pull request. In the GitHub repo, click Compare & pull request.
+Assign reviewers. Ella assigns Juan to review and approve her changes.
+Enter a comment for your reviewers.
+Click Create pull request.
+
+merges the pull request
+
+-------------------------------
+Pull the Changes from the Repo.
+In VS Code, click the Source Control icon (1)
+Click the More Actions icon (2), then select Pull from (3).
+Select origin.
+The repository contains the new custom object, custom field, and triggers. All of Ella’s and Juan’s 
+
+In VS Code, log in to the Developer Pro sandbox. Select SFDX: Authorize an Org.
+Select Sandbox for the login URL (test.salesforce.com).
+Enter an alias for the sandbox, for example, dev_pro_sandbox.
+Log in with the sandbox username and password.
+
+From a command window, make sure you’re in the Salesforce DX project directory.
+On the command line, view the help for the source:convert command
+	sfdx force:source:convert --help
+	sfdx force:source:convert --rootdir force-app --outputdir tmp_convert
+	jar -cfM winter19.zip tmp_convert
+	
+Delete the output directory, tmp_convert. You can remove it quickly on the command line, or use Windows Explorer or Finder if you prefer.
+	rmdir /s tmp_convert
+
+Authorize to the Partial sandbox.
+Make sure you’re in the Salesforce DX project directory.
+On the command line, view the help for the deploy command
+	sfdx force:mdapi:deploy --help
+	
+	sfdx force:mdapi:deploy --zipfile winter19.zip --targetusername partial-sandbox \
+--testlevel RunSpecifiedTests --runtests TestLanguageCourseTrigger
+
+sfdx force:org:open --targetusername partial-sandbox
+
+Test the Release Artifact in the Staging (Full) Sandbox
+=============================================================================================
+
+Authorize to the Full sandbox.
+Run all local (regression) tests to validate the deployment without saving the components in the target org. A validation enables you to verify the results of tests that would be executed in a deployment, but doesn’t commit any changes
+	
+	sfdx force:mdapi:deploy --checkonly --zipfile winter19.zip --targetusername full-sandbox \
+--testlevel RunLocalTests
+
+sfdx force:mdapi:deploy --checkonly --zipfile winter19.zip --targetusername full-sandbox \
+--testlevel RunSpecifiedTests --runtests TestLanguageCourseTrigger
+
+sfdx force:mdapi:deploy --targetusername full-sandbox --validateddeployrequestid jobID
+
+============================================================================================
+Release to Production
+Authorize to the production org.
+Set up the quick deploy:
+
+sfdx force:mdapi:deploy --checkonly --zipfile winter19.zip --targetusername production-org \
+--testlevel RunSpecifiedTests --runtests TestLanguageCourseTrigger
+
+sfdx force:mdapi:deploy --targetusername production-org --validateddeployrequestid jobID
+
+Open the production org.
+===========================================================================================
+
+
+
+
+
+
+

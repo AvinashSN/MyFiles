@@ -1,0 +1,26 @@
+
+Below are the steps for resolution Salesforce provided
+1. login and open Developer Console by Chrome
+2. open Developer tools and select Network
+3. reload on Developer Console
+Use the following query to get the IDEWorkspace
+
+/services/data/v31.0/tooling/query/?q=SELECT id, name from IDEWorkspace
+
+and you would get Id: 1de1a0000014sEWAAY
+IsDeleted: false
+CreatedDate: 2015-06-18T22:02:05.000+0000
+CreatedById: 0051a000000K7Y7AAK
+LastModifiedDate: 2015-06-27T01:41:37.000+0000
+LastModifiedById: 0051a000000K7Y7AAK
+SystemModstamp: 2015-06-27T01:41:37.000+0000
+UserId: 0051a000000K7Y7AAK
+Name: Default
+Content:
+
+ID of IDEWorkspace is "1de1a0000014sEWAAY".
+4. login to Workbench and go to REST Explorer
+5. do GET for "/services/data/v29.0/tooling/sobjects/IDEWorkspace/1de0k000000CARsAAO" You will see the content of IDEWorkspace 6. do DELETE
+7. re-open Developer Console
+You will see an error. And you will see that menus are available.
+8. Create a new workspace as the old workspace as been deleted Then, Developer Console will work fine.

@@ -1,0 +1,91 @@
+Governor limits in salesforce:
+
+Pre Transaction Limits:
+SOQL: 100(Sync) - 200(Async)
+Record Retrieve by Soql : 50k
+Record Retrieve by Database.getQueryLocator: 10k
+
+SOSL: 20 
+Record retrieve by SOSL: 2000
+
+DML: 150
+Record process in DML : 10k
+Total number of callout in a transaction : 100 
+API time callout :120 sec
+Maximum future method per apex invocation : 50
+Maximum apex job added to queue with System.enqueJob: 50
+Total Number of SendEmail method : 10
+Total heap size : 6mb(Sync) :12 mb(Async)
+Maximun CPU time :  10 sec (sync) : 60 sec(Async)
+Maximum execution time for each Apex transaction: 10 min
+Maximum number of push notification method call allow per apex transaction:10 
+Maximum number of push notification that can be sent in each push notification method call: 2000
+
+Certified Manage Package : 
+SOQL: 1100
+Database.getQueryLocator : 110000
+SOSL : 220
+DML: 1650
+API Callout :1100
+sendEmail : 110
+
+Static Apex limit :
+
+Default timeout of callout in transaction :10 Seconds
+Maximum size of callout request : 6MB (Sync) and 12MB (Async)
+Maximum number of class and trigger code unit in deployment of apex : 5000
+Maximum SOQL query runtime : 120 seconds
+For loop list batch size : 200
+Database.QueryLocator : 50 million
+
+Size specific limit :
+Maximum number of charecter in class : 1 million
+Maximum number of Character in trigger : 1 Million
+Maximum Amount of code used by  Apex code in an ORG : 6 MB
+SOQL char limit : 20k - MALFORMED_QUERY
+Maximum Length of SOQL where clause: 4k
+SOSL char limit : 20k
+OFFSET limit : 2000 rows - Number outside valid range
+
+Concurrent API req : 5(dev) : 25(prod)
+
+Access token : 2000 char 
+Refresh token : 1024 Char
+
+Maximum Number of Email Message Processed: Number of user license multiply by 1000 or 10Lakh
+Maximum size of email(Body and attachment): 10 MB
+on demand email to case: 25 MB
+
+Single Email Message : 5,000 external email address, 100 receupient, 25 cc abd 25 bcc (internal user email address in setToAddress does not count limit)
+Spefifying user ids in setTargetObjectIds means the email does not count toward the daily limit.
+
+
+Mass Email Message only sent for : Contact, Lead and Users (Unlimited email)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

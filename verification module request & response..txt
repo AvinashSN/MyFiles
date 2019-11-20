@@ -1,0 +1,502 @@
+UAT URL:- http://gng.softcell.in/SoftcellServiceLayerV2/submit-application/4033
+
+========================================
+SAMPLE REQUEST
+========================================
+
+{
+  "HEADER": {
+    "APPLICATION-ID": 98754567,
+    "REQUEST-TIME": "27092017 16:41:37",
+    "SOURCE-NAME": "SFDC",
+    "SOURCE-COMPANY-NAME": "TCFSL",
+    "SOURCE-TXN-ID": "2017176978286",
+    "WEBTOP-ID": "270BZ0000851",
+    "CHK-BUREAU-FLAG": "Y",
+    "BUREAU-RESPONSE-FORMAT": "03",
+    "SCORE-FLAG": "Y",
+    "BUREAU-ACK-ID": "",
+    "CREDITVIDYA-FLAG": "",
+    "VERFICATION-API-FLAG": "Y",
+    "PERFIOS-FLAG": "",
+    "HUNTER-FLAG": "",
+    "POSIDEX-FLAG": "",
+    "IDV-FLAG": ""
+  },
+  "REQUEST": {
+    "APPLICANT-DATA": {
+      "APPLICANT-ID": "2015173885727",
+      "APPLICANT-TYPE": "P",
+      "CUSTOMER-TYPE": "I",
+      "APPLICANT-NAME": {
+        "FIRST-NAME": "RITURAJ",
+        "MIDDLE-NAME" : "NARAYAN",
+		"LAST-NAME" : "VERMA",
+		"PREFIX" : "Mr."
+      },
+      "GENDER": "MALE",
+      "DATE-OF-BIRTH": "28061967",
+      "AGE": 48,
+      "MARITAL-STATUS": "SINGLE",
+      "ADDRESS-DTLS": [
+        {
+          "ADDRESS-TYPE": "RESIDENCE",
+          "RESIDENCE-ADDR-CODE": "S",
+          "TIME-AT-CITY": 204,
+          "TIME-AT-ADDRESS": 204,
+          "ADDRESS-LINE-1": "D 55 BADHWAR PARK RAILWAY",
+          "ADDRESS-LINE-2": "OFFICERS, COLONY COLABA",
+          "ADDRESS-CITY": "MUMBAI",
+          "ADDRESS-PIN": 400005,
+          "ADDRESS-STATE": "MAHARASHTRA",
+          "ADDRESS-COUNTRY": "INDIA",
+          "RESIDENCE_OWNED_BY": "S",
+          "RESI-CUM-OFFICE": "N"
+        },
+        {
+          "ADDRESS-TYPE": "PERMANENT",
+          "RESIDENCE-ADDR-CODE": "400005",
+          "TIME-AT-CITY": 0,
+          "TIME-AT-ADDRESS": 0,
+          "ADDRESS-LINE-1": "109/151 JAWAHR NAGAR MUMBAI",
+          "ADDRESS-LINE-2": "MUMBAI",
+          "ADDRESS-CITY": "MUMBAI",
+          "ADDRESS-PIN": 400005,
+          "ADDRESS-STATE": "MAHARASHTA",
+          "ADDRESS-COUNTRY": "INDIA",
+          "RESIDENCE_OWNED_BY": "S"
+        },
+        {
+          "ADDRESS-TYPE": "OFFICE",
+          "RESIDENCE-ADDR-CODE": "208012",
+          "TIME-AT-CITY": 0,
+          "TIME-AT-ADDRESS": 0,
+          "ADDRESS-LINE-1": "D 401 ROYAL CLASSIC NEXT TO CITY",
+          "ADDRESS-LINE-2": "MALL,ANDHERI LINK ROAD ANDHERI WEST",
+          "ADDRESS-CITY": "MUMBAI",
+          "ADDRESS-PIN": 400053,
+          "ADDRESS-STATE": "MAHARASHTRA",
+          "ADDRESS-COUNTRY": "INDIA",
+          "RESIDENCE_OWNED_BY": "S"
+        }
+      ],
+      "PHONE-DTLS": [
+        {
+          "PHONE-TYPE": "MOBILE PHONE",
+          "PHONE-NUMBER": 9820009574
+        }
+      ],
+      "EMAIL-DTLS": [
+        {
+          "EMAIL-TYPE": "PERSONAL",
+          "EMAIL-ID": "RITURAJVERMA2005@GMAIL.COM"
+        },
+        {
+          "EMAIL-TYPE": "WORK",
+          "EMAIL-ID": "Imroz.baig@tatacapital.com"
+        }
+      ],
+      "ID-DTLS": [
+        {
+          "ID-NAME": "AAdhar_No",
+          "ID-NUMBER": "714525975153"
+        }
+      ],
+      "OBLIGATION-DTLS": [
+        {
+          "OBLG-EMI-AMOUNT": 0
+        }
+      ],
+      "EMPLOYMENT-DTLS": [
+        {
+          "EMPLOYMENT-TYPE": "0103",
+          "EMPLOYER-NAME": "OTAKU EFFECTRETAIL ADVISORY",
+          "TIME-WITH-EMPLOYER": 30,
+          "MONTHLY-INCOME": 19000000,
+          "GROSS-INCOME": 10,
+          "TOTAL-WORK-EXPERIENCE": 44,
+          "TOTAL-BUSINESS-STABILITY": "",
+          "CURRENT-BUSINESS-STABILITY": ""
+        }
+      ],
+			"REFERENCE-DTLS":[{
+				"FIRST-NAME":"ATUL",
+				"LAST-NAME":"GOEL"
+			},{
+				"FIRST-NAME":"ANUP",
+				"LAST-NAME":"KHANDELWAL"
+			}]
+    },
+    "COAPPLICANT-DATA": [
+      {
+        "APPLICANT-ID": "179559354",
+        "APPLICANT-TYPE": "C",
+        "CUSTOMER-TYPE": "I",
+        "APPLICANT-NAME": {
+          "FIRST-NAME": "SMRITI",
+          "MIDDLE-NAME": "SHITLA",
+          "LAST-NAME": "VERMA",
+          "PREFIX": "Mrs."
+        },
+        "GENDER": "FEMALE",
+        "DATE-OF-BIRTH": "01031965",
+        "AGE": 50,
+        "MARITAL-STATUS": "MARRIED",
+        "ADDRESS-DTLS": [
+          {
+            "ADDRESS-TYPE": "RESIDENCE",
+            "RESIDENCE-ADDR-CODE": "400005",
+            "TIME-AT-CITY": 480,
+            "TIME-AT-ADDRESS": 480,
+            "ADDRESS-LINE-1": "D 55 BADHWAR PARK RAILWAY OFFICERS, COLONY COLABA",
+            "ADDRESS-LINE-2": "MUMBAI",
+            "ADDRESS-CITY": "MUMBAI",
+            "ADDRESS-PIN": 400005,
+            "ADDRESS-STATE": "MAHARASHTRA",
+            "ADDRESS-COUNTRY": "INDIA",
+            "RESIDENCE_OWNED_BY": "S"
+          },
+          {
+            "ADDRESS-TYPE": "PERMANENT",
+            "RESIDENCE-ADDR-CODE": "208012",
+            "TIME-AT-CITY": 0,
+            "TIME-AT-ADDRESS": 0,
+            "ADDRESS-LINE-1": "109/151 JAWAHR NAGAR MUMBAI",
+            "ADDRESS-LINE-2": "MUMBAI",
+            "ADDRESS-CITY": "MUMBAI",
+            "ADDRESS-PIN": 208012,
+            "ADDRESS-STATE": "UTTAR PRADESH",
+            "ADDRESS-COUNTRY": "INDIA",
+            "RESIDENCE_OWNED_BY": "S"
+          }
+        ],
+        "PHONE-DTLS": [
+          {
+            "PHONE-TYPE": "MOBILE PHONE",
+            "PHONE-NUMBER": 8090830547
+          }
+        ],
+        "EMAIL-DTLS": [
+          {
+            "EMAIL-TYPE": "PERSONAL",
+            "EMAIL-ID": "REKHAROCK593@GMAIL.COM"
+          },
+          {
+           "EMAIL-TYPE": "WORK",
+          "EMAIL-ID": "Amir.Khan@tatacapital.com"
+          }
+        ],
+        "ID-DTLS": [
+          {
+            "ID-NAME": "PAN",
+            "ID-NUMBER": "AAPPV9592H"
+          }
+        ],
+        "OBLIGATION-DTLS": [
+          {
+            "OBLG-EMI-AMOUNT": 0
+          }
+        ],
+        "EMPLOYMENT-DTLS": [
+        {
+          "EMPLOYMENT-TYPE": "0103",
+          "EMPLOYER-NAME": "OTAKU EFFECTRETAIL ADVISORY",
+          "TIME-WITH-EMPLOYER": 24,
+          "MONTHLY-INCOME": 50000,
+          "GROSS-INCOME": 600000,
+          "TOTAL-WORK-EXPERIENCE": 44,
+          "TOTAL-BUSINESS-STABILITY": "",
+          "CURRENT-BUSINESS-STABILITY": ""
+        }
+      ]
+      }
+    ],
+    "APPLICATION-DATA": {
+      "REQ-LOAN-TENOR": 18,
+      "SCHEME-ID": "SALN",
+      "LOAN-TYPE": "TW",
+      "REQ-LOAN-AMOUNT": 60000,
+      "ASSET-DETAILS": {
+        "ASSET-TYPE": "Hero Maestro",
+        "ASSET-MANUFACTURER": "HERO MOTOCORP LIMITED",
+        "MODEL-ID": 21861,
+        "ASSET-COST": 59980
+      }
+    }
+  }
+}
+
+
+==========================================================================
+
+Response
+===============
+
+{
+    "HEADER": {
+        "APPLICATION-ID": "98754567",
+        "REQUEST-RECEIVEDTIME": "27092017 16:41:37",
+        "RESPONSE-DATETIME": "15062018 154851"
+    },
+    "APPLICANT-RESPONSE": [
+        {
+            "APPLICANT-ID": "2015173885727",
+            "BUREAU-RESPONSE": {
+                "STATUS": "COMPLETED",
+                "FINISHED": [
+                    {
+                        "TRACKING-ID": 1279901,
+                        "BUREAU": "CIBIL",
+                        "PRODUCT": "CIR",
+                        "STATUS": "SUCCESS",
+                        "BUREAU-STRING": "TUEF12910683                     0000NB66461001                    100214866904115062018154836PN03N010125RITURAJ NARAYAN VERMA MR.07082806196708012ID03I010102010210ACPPV5203K9001YID03I020102030210YYU07288709001YID03I030102050208J83698549001YID03I0401020602127145259751539001YPT03T010108263444150302039001YPT03T02011098200095740302019001YPT03T030108228242140302029001YSC10CIBILTUSCR0102010202100308150620180405000-1PA03A010135D 55 BADHWAR PARK RAILWAY OFFICERS,0229COLONY COLABA , MUMBAI MUMBAI06022707064000050802021008300120179001YIQ04I0010108080620180412TATA CAPITAL050213060819000000IQ04I0020108070620180412TATA CAPITAL050213060819000000IQ04I0030108060620180412TATA CAPITAL050213060819000000IQ04I0040108060620180412TATA CAPITAL050213060560000IQ04I0050108040620180412TATA CAPITAL050213060819000000IQ04I0060108010620180412TATA CAPITAL050213060560000IQ04I0070108300520180412TATA CAPITAL050213060819000000IQ04I0080108300520180412TATA CAPITAL050213060560000IQ04I0090108290520180412TATA CAPITAL050213060819000000IQ04I0100108290520180412TATA CAPITAL050213060819000000IQ04I0110108230520180412TATA CAPITAL050213060819000000IQ04I0120108220520180412TATA CAPITAL050213060819000000IQ04I0130108210520180412TATA CAPITAL050213060819000000IQ04I0140108210520180412TATA CAPITAL0502130606190000IQ04I0150108160520180412TATA CAPITAL050213060819000000IQ04I0160108030520180412TATA CAPITAL0502130606190000IQ04I0170108270420180412TATA CAPITAL050213060819000000IQ04I0180108240420180412TATA CAPITAL050213060819000000IQ04I0190108240420180412TATA CAPITAL050213060819000000IQ04I0200108230420180412TATA CAPITAL050213060819000000IQ04I0210108200420180412TATA CAPITAL050213060819000000IQ04I0220108200420180412TATA CAPITAL050213060819000000IQ04I0230108200420180412TATA CAPITAL050213060819000000IQ04I0240108200420180412TATA CAPITAL050213060819000000IQ04I0250108200420180412TATA CAPITAL050213060819000000IQ04I0260108190420180412TATA CAPITAL0502130606190000IQ04I0270108020420180412TATA CAPITAL050213060819000000IQ04I0280108020420180412TATA CAPITAL050213060819000000IQ04I0290108020420180412TATA CAPITAL050213060819000000IQ04I0300108020420180412TATA CAPITAL050213060819000000IQ04I0310108020420180412TATA CAPITAL050213060819000000IQ04I0320108020420180412TATA CAPITAL050213060819000000IQ04I0330108020420180412TATA CAPITAL050213060819000000IQ04I0340108020420180412TATA CAPITAL050213060819000000IQ04I0350108020420180412TATA CAPITAL050213060819000000IQ04I0360108020420180412TATA CAPITAL050213060819000000IQ04I0370108020420180412TATA CAPITAL050213060819000000IQ04I0380108020420180412TATA CAPITAL050213060819000000IQ04I0390108020420180412TATA CAPITAL050213060819000000IQ04I0400108020420180412TATA CAPITAL050213060819000000IQ04I0410108020420180412TATA CAPITAL050213060819000000IQ04I0420108020420180412TATA CAPITAL050213060819000000IQ04I0430108020420180412TATA CAPITAL050213060819000000IQ04I0440108020420180412TATA CAPITAL050213060819000000IQ04I0450108020420180412TATA CAPITAL0502130606190000IQ04I0460108020420180412TATA CAPITAL0502130606190000IQ04I0470108020420180412TATA CAPITAL0502130606190000IQ04I0480108020420180412TATA CAPITAL0502130606190000IQ04I0490108020420180412TATA CAPITAL050213060819000000IQ04I0500108020420180412TATA CAPITAL050213060819000000IQ04I0510108020420180412TATA CAPITAL050213060819000000IQ04I0520108020420180412TATA CAPITAL050213060819000000IQ04I0530108020420180412TATA CAPITAL050213060819000000IQ04I0540108300320180412TATA CAPITAL050213060819000000IQ04I0550108290320180412TATA CAPITAL050213060546000IQ04I0560108260420170412TATA CAPITAL05020506071900001IQ04I0570108260420170412TATA CAPITAL05020506071900001IQ04I0580108300120170412TATA CAPITAL05020506071234567ES0700036520102**",
+                        "PDF-REPORT": null,
+                        "JSON-RESPONSE-OBJECT": null
+                    }
+                ]
+            },
+            "SOBRE-RESPONSE": {
+                "SCORING-REF-ID": "721096",
+                "STATUS": "COMPLETED",
+                "SCORE-DATA": [
+                    {
+                        "STATUS": "SUCCESS",
+                        "SCORECARD_NAME": "CD_HIT",
+                        "SCORE_VALUE": "0.092",
+                        "SCORE_DETAILS": {
+                            "CD_HIT": {
+                                "MAX_AGE_TRADE_CC_ONC": {
+                                    "CUSTOM_FIELDS$MAX_AGE_TRADE_CC_ONC": {
+                                        "dField": "CUSTOM_FIELDS$MAX_AGE_TRADE_CC_ONC",
+                                        "FieldName": "MAX_AGE_TRADE_CC_ONC",
+                                        "dScore": 0.5806,
+                                        "weight": 1,
+                                        "cScore": 0.5806,
+                                        "expression": " ( ( CUSTOM_FIELDS$MAX_AGE_TRADE_CC_ONC ~ 9 ) )",
+                                        "value": {
+                                            "MAX_AGE_TRADE_CC_ONC": "0"
+                                        }
+                                    }
+                                },
+                                "CL_ENQ_L9M": {
+                                    "CUSTOM_FIELDS$CD_CL_ENQ_L9M": {
+                                        "dField": "CUSTOM_FIELDS$CD_CL_ENQ_L9M",
+                                        "FieldName": "CD_CL_ENQ_L9M",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( CUSTOM_FIELDS$CD_CL_ENQ_L9M ~ 0 ) )",
+                                        "value": {
+                                            "CD_CL_ENQ_L9M": "0"
+                                        }
+                                    }
+                                },
+                                "REQUESTED_AMOUNT": {
+                                    "IRP$oReq$oApplication$dLoanAmt": {
+                                        "dField": "IRP$oReq$oApplication$dLoanAmt",
+                                        "FieldName": "APPLICATION_LOAN_AMOUNT",
+                                        "dScore": 0.4996,
+                                        "weight": 1,
+                                        "cScore": 0.4996,
+                                        "expression": " ( ( IRP$oReq$oApplication$dLoanAmt > 55000 ) )",
+                                        "value": {
+                                            "APPLICATION_LOAN_AMOUNT": 60000
+                                        }
+                                    }
+                                },
+                                "LOCATION_RISK": {
+                                    "PINCODE_MASTER$HIT_RANK": {
+                                        "dField": "PINCODE_MASTER$HIT_RANK",
+                                        "FieldName": "HIT_RANK",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": "No Rule Matched",
+                                        "value": {}
+                                    }
+                                },
+                                "POS_TO_SANCT_RATIO_CC_OP": {
+                                    "CUSTOM_FIELDS$UC_CNC_CNT_CC_TRADE": {
+                                        "dField": "CUSTOM_FIELDS$UC_CNC_CNT_CC_TRADE",
+                                        "FieldName": "UC_CNC_CNT_CC_TRADE",
+                                        "dScore": 0.9197,
+                                        "weight": 1,
+                                        "cScore": 0.9197,
+                                        "expression": " ( ( CUSTOM_FIELDS$UC_CNC_CNT_CC_TRADE = 0 ) )",
+                                        "value": {
+                                            "UC_CNC_CNT_CC_TRADE": "0"
+                                        }
+                                    }
+                                },
+                                "Customer_profile": {
+                                    "CUSTOM_FIELDS$IRP_EMPLOYMENT_TYPE_V1": {
+                                        "dField": "CUSTOM_FIELDS$IRP_EMPLOYMENT_TYPE_V1",
+                                        "FieldName": "IRP_EMPLOYMENT_TYPE_V1",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( CUSTOM_FIELDS$IRP_EMPLOYMENT_TYPE_V1 = SALARIED ) )",
+                                        "value": {
+                                            "IRP_EMPLOYMENT_TYPE_V1": "SALARIED"
+                                        }
+                                    }
+                                },
+                                "LOAN_TENURE": {
+                                    "IRP$oReq$oApplication$iLoanTenor": {
+                                        "dField": "IRP$oReq$oApplication$iLoanTenor",
+                                        "FieldName": "APPLICATION_LOAN_TENOR",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( IRP$oReq$oApplication$iLoanTenor > 9 ) )",
+                                        "value": {
+                                            "APPLICATION_LOAN_TENOR": 18
+                                        }
+                                    }
+                                },
+                                "_NO_TR_OPEN_L12M_UNS_ONC": {
+                                    "CUSTOM_FIELDS$_NO_TR_OPEN_L12M_UNS_ONC": {
+                                        "dField": "CUSTOM_FIELDS$_NO_TR_OPEN_L12M_UNS_ONC",
+                                        "FieldName": "_NO_TR_OPEN_L12M_UNS_ONC",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( CUSTOM_FIELDS$_NO_TR_OPEN_L12M_UNS_ONC ~ 1 ) )",
+                                        "value": {
+                                            "_NO_TR_OPEN_L12M_UNS_ONC": "0"
+                                        }
+                                    }
+                                },
+                                "PROP_PAYMENTS_ZERO_PLUS_ALL_ONC": {
+                                    "ANALYTICAL_FIELDS$_PCT_0P_ALL_ONC": {
+                                        "dField": "ANALYTICAL_FIELDS$_PCT_0P_ALL_ONC",
+                                        "FieldName": "_PCT_0P_ALL_ONC",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( ANALYTICAL_FIELDS$_PCT_0P_ALL_ONC = NA ) )",
+                                        "value": {
+                                            "_PCT_0P_ALL_ONC": "NA"
+                                        }
+                                    }
+                                },
+                                "ALL_ENQ_L3M_UPTO_5L": {
+                                    "CUSTOM_FIELDS$ALL_ENQ_L3M_UPTO_5L": {
+                                        "dField": "CUSTOM_FIELDS$ALL_ENQ_L3M_UPTO_5L",
+                                        "FieldName": "ALL_ENQ_L3M_UPTO_5L",
+                                        "dScore": 0.4549,
+                                        "weight": 1,
+                                        "cScore": 0.4549,
+                                        "expression": " ( ( CUSTOM_FIELDS$ALL_ENQ_L3M_UPTO_5L > 1 ) )",
+                                        "value": {
+                                            "ALL_ENQ_L3M_UPTO_5L": 11
+                                        }
+                                    }
+                                },
+                                "_NO_OF_MONTHS_WT_CIBIL": {
+                                    "CUSTOM_FIELDS$_NO_OF_MONTHS_WT_CIBIL": {
+                                        "dField": "CUSTOM_FIELDS$_NO_OF_MONTHS_WT_CIBIL",
+                                        "FieldName": "_NO_OF_MONTHS_WT_CIBIL",
+                                        "dScore": 0.6349,
+                                        "weight": 1,
+                                        "cScore": 0.6349,
+                                        "expression": " ( ( CUSTOM_FIELDS$_NO_OF_MONTHS_WT_CIBIL ~ 24 ) )",
+                                        "value": {
+                                            "_NO_OF_MONTHS_WT_CIBIL": "0"
+                                        }
+                                    }
+                                },
+                                "AGE": {
+                                    "IRP$oReq$oApplicant$iAge": {
+                                        "dField": "IRP$oReq$oApplicant$iAge",
+                                        "FieldName": "APPLICANT_AGE",
+                                        "dScore": 0,
+                                        "weight": 1,
+                                        "cScore": 0,
+                                        "expression": " ( ( IRP$oReq$oApplicant$iAge > 45 ) )",
+                                        "value": {
+                                            "APPLICANT_AGE": 48
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "DERIVED-ATTRIBUTES": {
+                    "POLICY_NAME": "First Time Check",
+                    "CUSTOM_FIELDS$COUNT_DPD_0+": "0",
+                    "ANALYTICAL_FIELDS$_PCT_0P_ALL_ONC": "NA",
+                    "CUSTOM_FIELDS$MAX_AGE_TRADE_CC_ONC": "0",
+                    "CUSTOM_FIELDS$COUNT_TOTAL_DPD": "0",
+                    "CUSTOM_FIELDS$ALL_ENQ_L3M_UPTO_5L": 11,
+                    "POLICY_ID": 44,
+                    "CUSTOM_FIELDS$_NO_TR_OPEN_L12M_UNS_ONC": "0",
+                    "CUSTOM_FIELDS$IRP_EMPLOYMENT_TYPE_V1": "SALARIED",
+                    "CUSTOM_FIELDS$_NO_OF_MONTHS_WT_CIBIL": "0",
+                    "CUSTOM_FIELDS$UC_CNC_CNT_CC_TRADE": "0",
+                    "CUSTOM_FIELDS$CD_CL_ENQ_L9M": "0",
+                    "LTV_MULTIPLIER": 3,
+                    "LTV_APPROVED_AMOUNT": 1799.4,
+                    "MAX_APPROVED_AMOUNT": 125000
+                }
+            },
+            "DECISION-RESPONSE": {
+                "SCORE-VALUE": "0.092",
+                "SCORE-BAND": "6",
+                "DECISION": "Approved",
+                "DECISION-REASONS": [
+                    "INSTITUTION CODE IS 4022"
+                ],
+                "APPROVED-LOAN-AMOUNT": 1799.4,
+                "APPROVED-IRR": 0
+            },
+            "EXT-SCORECARD-RESPONSE": {},
+            "EXT-SCORECARD-RESPONSE-LIST": [
+                {
+                    "EXTERNAL-ENTITY-NAME": "IDV-RESPONSE",
+                    "RESPONSE-DATA": "{\"sStatus\":\"SUCCESS\",\"oErrors\":null,\"oDcResponse\":{\"oTUResponse\":null,\"sAppID\":\"null\",\"sLogTxnID\":\"4088490\",\"sExtAppID\":\"\",\"sRetStatus\":\"SUCCESS\",\"sErrorMessage\":\"null\"}}",
+                    "EXTERNAL-ENTITY-STATUS": "SUCCESS"
+                },
+                {
+                    "EXTERNAL-ENTITY-NAME": "PERFIOS-RESPONSE",
+                    "RESPONSE-DATA": "{\"status\":null,\"errors\":null,\"oPerfiosResponse\":{\"oPerfiosUniques\":null,\"sRetStatus\":null,\"sErrorMessage\":null,\"sLogTxnId\":null,\"oResponse\":null}}"
+                },
+                {
+                    "EXTERNAL-ENTITY-NAME": "POSIDEX-RESPONSE",
+                    "RESPONSE-DATA": "{\"extDedupeResponse\":{\"api\":{\"remarks\":\"\",\"logTxnId\":\"4088493\",\"status\":\"SUCCESS\"},\"fanNo\":\"270BZ0000851\",\"extDedupeApplicants\":{\"extDedupeApplicant\":{\"extDedupeDetails\":{\"overallResult\":\"004\",\"typeOfMatch\":\"\",\"dedupeReferenceId\":\"71694\"},\"extDedupeAppDetails\":{\"applicantType\":\"P\",\"applicantReferenceId\":\"2017176978286\"},\"extDedupeMatches\":{\"extDedupeMatch\":{\"branchCode\":\"\",\"pinCodeNo\":\"\",\"matchDesc\":\"\",\"applFlag\":\"\",\"idPanCard\":\"\",\"odcSett\":\"\",\"phoneNo\":\"\",\"mobileNo\":\"\",\"bookedDate\":\"\",\"reportDate\":\"\",\"dd\":\"\",\"reason\":\"\",\"idElectionCard\":\"\",\"idDrivingLic\":\"\",\"contractId\":\"\",\"dealerCode\":\"\",\"birthDate\":\"\",\"valWaiver\":\"\",\"idPassport\":\"\",\"model\":\"\",\"firstName\":\"\",\"addressLine1\":\"\",\"lastName\":\"\",\"middleName\":\"\",\"addressLine2\":\"\",\"addressLine3\":\"\",\"city\":\"\",\"contractNo\":\"\",\"rcNo\":\"\",\"chasisNo\":\"\",\"engineNo\":\"\",\"status\":\"\"}}}}},\"STATUS\":null}"
+                },
+                {
+                    "EXTERNAL-ENTITY-NAME": "HUNTER-RESPONSE",
+                    "RESPONSE-DATA": "{\"REQUEST\":\"<BATCH xmlns=\\\"urn:mclsoftware.co.uk:hunterII\\\"><API><UserId>SoftcellCFAB</UserId><Password>SoftcellCFAB@123</Password></API><HEADER><COUNT>01</COUNT><ORIGINATOR>TATA_CAPITAL</ORIGINATOR></HEADER><SUBMISSIONS><SUBMISSION NotificationRqd = \\\"01\\\"><IDENTIFIER>2015173885727</IDENTIFIER><PRODUCT>null</PRODUCT><CLASSIFICATION>REFERRED</CLASSIFICATION><DATE>2018-06-15</DATE><APP_DTE>2017-09-27</APP_DTE><TERM>18</TERM><SUB_VAL>60000</SUB_VAL><BRNCH_RGN>WEST</BRNCH_RGN><MA><FST_NME>RITURAJ</FST_NME><MID_NME>NARAYAN</MID_NME><LST_NME>VERMA</LST_NME><DOB>1967-06-28</DOB><AGE>48</AGE><NAT_CDE>INDIA</NAT_CDE><GNDR>MALE</GNDR><MAR_STT>SINGLE</MAR_STT><INC>19000000</INC><MA_CA><ADD>D 55 BADHWAR PARK RAILWAY , OFFICERS, COLONY COLABA</ADD><CTY>MUMBAI</CTY><STE>27</STE><CTRY>INDIA</CTRY><PIN>400005</PIN><TME_ADD>204</TME_ADD><ADD>109/151 JAWAHR NAGAR MUMBAI , MUMBAI</ADD><CTY>MUMBAI</CTY><STE>MAHARASHTA</STE><CTRY>INDIA</CTRY><PIN>400005</PIN><TME_ADD>0</TME_ADD><ADD>D 401 ROYAL CLASSIC NEXT TO CITY , MALL,ANDHERI LINK ROAD ANDHERI WEST</ADD><CTY>MUMBAI</CTY><STE>27</STE><CTRY>INDIA</CTRY><PIN>400053</PIN><TME_ADD>0</TME_ADD></MA_CA><MA_PMA><ADD>109/151 JAWAHR NAGAR MUMBAI , MUMBAI</ADD><CTY>MUMBAI</CTY><STE>MAHARASHTA</STE><CTRY>INDIA</CTRY><PIN>400005</PIN><TME_ADD>0</TME_ADD></MA_PMA><MA_HT></MA_HT><MA_MT><TEL_NO>9820009574</TEL_NO></MA_MT><MA_BT></MA_BT><MA_EMA><EMA_ADD>RITURAJVERMA2005@GMAIL.COM</EMA_ADD><EMA_ADD>Imroz.baig@tatacapital.com</EMA_ADD></MA_EMA><MA_BNK></MA_BNK><MA_EMP><ORG_NME>OTAKU EFFECTRETAIL ADVISORY</ORG_NME><TME_EMP>30</TME_EMP><MA_EMP_AD><ADD>D 401 ROYAL CLASSIC NEXT TO CITY , MALL,ANDHERI LINK ROAD ANDHERI WEST</ADD><CTY>MUMBAI</CTY><STE>27</STE><CTRY>INDIA</CTRY><PIN>400053</PIN></MA_EMP_AD></MA_EMP></MA><JA><FST_NME>SMRITI</FST_NME><MID_NME>SHITLA</MID_NME><LST_NME>VERMA</LST_NME><DOB>1965-03-01</DOB><AGE>50</AGE><PAN>AAPPV9592H</PAN><NAT_CDE>INDIA</NAT_CDE><JA_CA><ADD>D 55 BADHWAR PARK RAILWAY OFFICERS, COLONY COLABA , MUMBAI</ADD><CTY>MUMBAI</CTY><STE>MAHARASHTRA</STE><CTRY>INDIA</CTRY><PIN>400005</PIN><TME_ADD>480</TME_ADD><ADD>109/151 JAWAHR NAGAR MUMBAI , MUMBAI</ADD><CTY>MUMBAI</CTY><STE>UTTAR PRADESH</STE><CTRY>INDIA</CTRY><PIN>208012</PIN><TME_ADD>0</TME_ADD></JA_CA></JA><RF><FST_NME>ATUL</FST_NME><LST_NME>GOEL</LST_NME><RF_CA></RF_CA><FST_NME>ANUP</FST_NME><LST_NME>KHANDELWAL</LST_NME><RF_CA></RF_CA></RF></SUBMISSION></SUBMISSIONS></BATCH>\",\"RESPONSE\":{\"matchSummary\":{\"matches\":null,\"totalMatchScore\":\"0\",\"rules\":null,\"matcheSchemes\":null},\"errorWarnings\":{\"errors\":{\"errorCount\":null,\"error\":{\"number\":\"2014\",\"message\":\"Unknown/undefined product code\",\"values\":{\"value\":[\"null\",\"13\"]}}},\"warnings\":{\"warningCount\":null,\"warning\":null}},\"logTxnID\":\"4088494\",\"retStatus\":\"FAIL\",\"errorMessage\":\"Generate submission error\",\"api\":null}}",
+                    "EXTERNAL-ENTITY-STATUS": "FAIL"
+                },
+                {
+                    "EXTERNAL-ENTITY-NAME": "CREDITVIDYA-RESPONSE",
+                    "RESPONSE-DATA": "{\"sAckId\":\"\",\"sTrackingId\":\"\",\"sUniqueRefId\":\"1509688081687579279\",\"sUrl\":\"http://convergeuat.tatacapital.com/APIFramework/APIServices/emailValidation.htm\",\"sInstitutionId\":\"4022\",\"sRawResponse\":\"{\\\"clientReference\\\":{\\\"webtopNumber\\\":\\\"\\\",\\\"loanType\\\":\\\"\\\",\\\"applicantType\\\":\\\"\\\",\\\"applicantId\\\":\\\"\\\",\\\"losId\\\":\\\"\\\",\\\"transactionId\\\":\\\"\\\",\\\"leadId\\\":\\\"\\\"},\\\"API\\\":{\\\"RetStatus\\\":\\\"FAIL\\\",\\\"LogTxnID\\\":\\\"\\\",\\\"ErrorMessage\\\":\\\"Something went wrong\\\"}}\",\"oResponse\":{\"sUniqueId\":null,\"sFirstName\":null,\"sMiddleName\":null,\"sLastName\":null,\"sCity\":null,\"sMobileNumber\":null,\"sEmail\":null,\"sValidationStatus\":null,\"oEmailInfo\":null,\"oDomainInfo\":null,\"sEmailSentTimestamp\":null,\"sEmailBouncedTimestamp\":null,\"sRequestTimestamp\":null,\"sLinkOpenTimestamp\":null,\"sFormSubmitTimestamp\":null,\"oFormInfo\":null,\"oApi\":{\"sRetStatus\":\"FAIL\",\"sErrorMessage\":\"Something went wrong\",\"sLogTxnID\":\"\"},\"sRiskFlag\":null,\"oRiskInfo\":null,\"oClientReference\":{\"sTransactionId\":\"\",\"sApplicantType\":\"\",\"sLosId\":\"\",\"sApplicantId\":\"\",\"sLoanType\":\"\",\"sLeadId\":\"\",\"sWebtopNumber\":\"\"},\"oCompanyInfo\":null,\"oVerifyInfo\":null,\"oErrorList\":null,\"sMessage\":null,\"sStatus\":null},\"sStatus\":\"FAIL\",\"dStartTime\":1529057924112,\"dEndTime\":1529057924353,\"iTimeTaken\":241,\"dAfwStartTime\":1529057924120,\"dAfwEndTime\":1529057924353,\"iAfwTimeTaken\":233,\"iCvDmzTat\":8}",
+                    "EXTERNAL-ENTITY-STATUS": "FAIL"
+                }
+            ]
+        },
+        {
+            "APPLICANT-ID": "179559354",
+            "BUREAU-RESPONSE": {
+                "STATUS": "COMPLETED",
+                "FINISHED": [
+                    {
+                        "TRACKING-ID": 1279902,
+                        "BUREAU": "CIBIL",
+                        "PRODUCT": "CIR",
+                        "STATUS": "SUCCESS",
+                        "BUREAU-STRING": "TUEF12910684                     0000NB66461001                    100214866904215062018154840PN03N010124SMRITI SHITLA VERMA MRS.07080103196508011ID03I010102010210AAPPV9592H9001YPT03T01011080908305470302019001YSC10CIBILTUSCR0102010202100308150620180405000-1PA03A010135D 55 BADHWAR PARK RAILWAY OFFICERS,0229COLONY COLABA , MUMBAI MUMBAI06022707064000050802021008020420189001YPA03A020136109/151 JAWAHR NAGAR MUMBAI , MUMBAI0206MUMBAI06020907062080120802011008300320189001YIQ04I0010108130620180412TATA CAPITAL050213060560000IQ04I0020108120620180412TATA CAPITAL050213060560000IQ04I0030108070620180412TATA CAPITAL050213060819000000IQ04I0040108060620180412TATA CAPITAL050213060560000IQ04I0050108040620180412TATA CAPITAL050213060819000000IQ04I0060108010620180412TATA CAPITAL050213060560000IQ04I0070108300520180412TATA CAPITAL050213060560000IQ04I0080108290520180412TATA CAPITAL050213060819000000IQ04I0090108230520180412TATA CAPITAL050213060819000000IQ04I0100108210520180412TATA CAPITAL050213060819000000IQ04I0110108210520180412TATA CAPITAL0502130606190000IQ04I0120108160520180412TATA CAPITAL050213060819000000IQ04I0130108030520180412TATA CAPITAL0502130606190000IQ04I0140108270420180412TATA CAPITAL050213060819000000IQ04I0150108240420180412TATA CAPITAL050213060819000000IQ04I0160108230420180412TATA CAPITAL050213060819000000IQ04I0170108200420180412TATA CAPITAL050213060819000000IQ04I0180108190420180412TATA CAPITAL0502130606190000IQ04I0190108020420180412TATA CAPITAL050213060819000000IQ04I0200108020420180412TATA CAPITAL050213060819000000IQ04I0210108020420180412TATA CAPITAL050213060819000000IQ04I0220108020420180412TATA CAPITAL050213060819000000IQ04I0230108020420180412TATA CAPITAL050213060819000000IQ04I0240108020420180412TATA CAPITAL050213060819000000IQ04I0250108020420180412TATA CAPITAL050213060819000000IQ04I0260108020420180412TATA CAPITAL050213060819000000IQ04I0270108020420180412TATA CAPITAL050213060819000000IQ04I0280108020420180412TATA CAPITAL050213060819000000IQ04I0290108020420180412TATA CAPITAL050213060819000000IQ04I0300108020420180412TATA CAPITAL050213060819000000IQ04I0310108020420180412TATA CAPITAL050213060819000000IQ04I0320108020420180412TATA CAPITAL050213060819000000IQ04I0330108020420180412TATA CAPITAL050213060819000000IQ04I0340108020420180412TATA CAPITAL050213060819000000IQ04I0350108020420180412TATA CAPITAL050213060819000000IQ04I0360108020420180412TATA CAPITAL050213060819000000IQ04I0370108020420180412TATA CAPITAL0502130606190000IQ04I0380108020420180412TATA CAPITAL0502130606190000IQ04I0390108020420180412TATA CAPITAL0502130606190000IQ04I0400108020420180412TATA CAPITAL0502130606190000IQ04I0410108020420180412TATA CAPITAL050213060819000000IQ04I0420108020420180412TATA CAPITAL050213060819000000IQ04I0430108020420180412TATA CAPITAL050213060819000000IQ04I0440108020420180412TATA CAPITAL050213060819000000IQ04I0450108020420180412TATA CAPITAL050213060819000000IQ04I0460108300320180412TATA CAPITAL050213060819000000ES0700029430102**",
+                        "PDF-REPORT": null,
+                        "JSON-RESPONSE-OBJECT": null
+                    }
+                ]
+            },
+            "EXT-SCORECARD-RESPONSE-LIST": []
+        }
+    ],
+    "UNIQUE-REF-ID": "1509688081687579279",
+    "STATUS": "SUCCESS"
+}

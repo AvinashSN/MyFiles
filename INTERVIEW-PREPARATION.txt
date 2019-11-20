@@ -1,0 +1,510 @@
+﻿How to prevent duplicate record entry in Lead,Account and contact?
+ Setup->Duplicate Rules and Matching Rule / OR Create Unique fields.
+ 
+How to handle API timeout in salesforce? Using Continuation Callout
+
+What is callback url in connected app? : after successfull authentication user will redirect toward callback url(2000 char).User will get access token.
+What is access token and refresh token? : [Authorization server and resource server]
+What is the query for fetching Account from contact? : [select Id,Name,Account.Name from contact]
+
+How to lock record for Update in SOQL ? [select Id,Name from Account FOR UPDATE]
+What is the query for fetching all record(deleted record also)?[select Id,Name from Account ALL ROWS]
+Write SOQL to fetch 3rd and 4th Row from Account.
+		SELECT Name, Id
+		FROM Account
+		ORDER BY Name
+		LIMIT 4
+		OFFSET 2
+
+Owner Data Skew ? By deleting record or by changing owner of record.
+	Try to limit the children to 10,000 while designing the architecture, for this you can assign the children by using the Round Robin algorithm with the help of custom settings for the child and parent objects.
+You can adopt the public Read/Write sharing model, where the parent account stays locked and the calculations still occur.
+If the skewed accounts are there, then you can re-distribute the child objects to reduce the record-level hurdles.
+
+
+
+Dataloader - How to avoid comma seperated value field(Address field have comma seperated text)-> take such kind of value in quote.
+ We can perform action in Dataloader : Insert,Update,Upsert,Delete,Hard Delete,Export,Export All.
+ Allow Bulk API = True;
+ Allow Null value = True;
+ 
+Write query to access all record from Contact where Billing City and Shipping City are same? (formula field)
+
+Where Clause over TextAreaField:
+List<Project__c> projects = new List<Project__c>();
+for(Project__c proj : [SELECT Name, Status__c, Description__c FROM Project__c WHERE Name LIKE '%' + String.escapeSingleQuotes(name) +'%' + OR Status__c = String.escapeSingleQuotes(status)]) {
+    if(proj.Description__c.contains('filter string')) {
+        projects.add(proj);
+    }
+}
+
+Can we set Null as key in Map. - YES
+Map<string,string> maap= new Map<string,String>();
+maap.put(null, 'Avinash');
+system.debug('=='+maap.get(null));
+
+
+ Account acc=[select id from account where name='Avinash']; Optimised code here.
+List<Account> acc=[select id from account where name='Avinash'];
+
+Need to check not null or certain value
+string s;
+if(s==null && s=='dd')
+{  
+}
+
+
+What are the causes of decrease test coverage of classes in Prod envt? Insifficient Setup Data
+What is used of For Update in Soql? To lock record for certain time to do operation.
+
+How to toogle (Active/Deactive)Picklist value on the click of button in lightning?	
+
+What is two way binding in lightning?{!v.attr}(Value provider)
+
+What are platform event? event driven architecture "Enterprise Message Platform"
+
+There is subscriber and publisher communicate with each other through event. //Process builder and trigger
+ This is just like custom object. Suffix is "__e"
+ We can create custom fileds in platform event.
+	checkbox,date,datetime,number,text,textarea
+	Standard Field : Created By, Created Date, Replay Id 
+	You can't query SOQL or SOSL on Platform event
+	you can't use platform event in report / listview/search
+	publish platform event cant be rollback
+	platform event fields are readonly
+	only after insert trigger are supported
+	you can access platform event through API and declarative
+	you can controll platform event through profile and permission.
+Trigger and subscription
+	EventBus.publish(publishEventObjects)
+What is the CPU time exception? limit exception. when we perform bulk operation then probably it show this error. Code should be optimised here.
+
+What is the order of execution of salesforce? 
+
+Soql charecter limit ? 20k charecters.
+Where clause char limit ? 4k char
+
+Sosl record limit? 2000
+Total sosl ? 20 
+FIND 'SearchQuery' [IN SearchGroup] [RETURNING ObjectsAndFields]
+
+SearchGroup are below:
+ALL FIELDS
+NAME FIELDS
+EMAIL FIELDS
+PHONE FIELDS
+SIDEBAR FIELDS
+
+Query Editor:
+FIND {Avinash} IN ALL FIELDS Returning User(Id,Name,Email), Lead(Id,Name),Contact(Id,Name,LastName,Email)
+FIND {Avinash} IN ALL FIELDS Returning User(Id,Name,Email), Lead(Id,Name),Contact(Id,Name,LastName,Email where Email='avi@gmail.com')//Whith where clause
+FIND {Avinash} IN ALL FIELDS Returning User(Id,Name,Email), Lead(Id,Name),Contact(Id,Name,LastName,Email order by Name)//With Order by
+FIND {Avinash} IN ALL FIELDS Returning User(Id,Name,Email), Lead(Id,Name),Contact(Id,Name,LastName,Email limit 10)//with limit
+
+Anonymous window:
+List<List<sObject>> searchList = [FIND 'Wingo OR SFDC' IN ALL FIELDS 
+                   RETURNING Account(Name),Contact(FirstName,LastName,Department)];
+Account[] searchAccounts = (Account[])searchList[0];
+Contact[] searchContacts = (Contact[])searchList[1];
+
+Difference between SOSL and Soql
+
+SOSL : (Salesforce object search language)
+record limit : 2000
+work on multiple object
+serach on text, email and phone
+
+SOQL:(Salesforce Object Query Language)
+Record Limit : 50k
+Work on single object or related obect
+Can not use text area, encrypted field in where clause.
+We can not compare two column of same object in where clause.
+
+
+
+Map? collection - key value pair -> key is always unique
+Set? Unique Set - Unorder collection of element which contain only Unique keys
+List? Order collection of element which contain duplicate values.
+What is lightning framework? : this is UI framework from aura. 
+	Browser compatable. 
+	Device compatable for desktop mobile etc.
+	Increase performance .
+	Loosely coupled. 
+	Seperation of code is main advantages of this framework.    Component Bundle -> Component->Controller->Helper->Style->Renderer->Documentation->Design->SVG
+Dynamically instantiate class in apex ?: 
+	String classname='MyDynamicClass';
+	ApexClass c=[Select Id,Name from ApexClass where Name =:classname];
+	Type mycls= Type.forname(c.Name);
+	myCls.newInstance();	
+calling apex class method from javascript:
+apex.js,connection.js	
+sforce.apex.execute('className','MethodName'{});
+ Question related to API integration?
+ Question on Batch Apex ? Can we access query instance from Start method to finish method? yes by using Database.stateful
+ how to call another batch apex from first batch? From Finish Method. you can call 5 batch subsequently
+ How to write test class for Batch Apex, scheduler?	
+ How to bypass validation rule when upload bulk data using dataloader. : Take one boolen field and check this field in validation rule.
+ What are best practice to write test class? 
+	Avoid SeeAllData=true, 
+	Use DataFactory to create all data. 
+	Always create bulky data for test class, 
+	@isTest method , 
+	@testSetup only one 
+	Test.startTest()
+	Test.stopTest()
+	use  Assert statement
+		System.assert()
+		System.assertEquals()
+		System.assertNotEquals()
+		System.runAs()	
+ What are trigger context ? 
+	
+	Before and After (insert,update,delete,Undelete)
+	Context variable : Trigger.New,Trigger.Old, Trigger.IsExecuting,Trigger.isBefore,Trigger.IsAfter,Trigger.isDelete,Trigger.isInsert,Trigger.isUpdate
+	Trigger.NewMap,Trigger.OldMap
+	addError()	
+ Best practice to write trigger ? 
+	write only one trigger. 
+	Salesforce not sure about execution of sequence of trigger. 
+	Trigger Should be bulkify, 
+	Always use Trigger context variable.
+	Avoid DML or Soql in Trigger, 
+	All logic should be in helperclass.	
+ How to restrict some user to read,write on fields from same profile ? validation Rule. Trigger.
+ Order of salesforce execution and trigger? Where will be the Processbuilder fall in order of execution.
+	System Validation
+	Before Trigger
+	Custom Validation
+	After Trigger
+	Assignment Rule
+	Auto response rule
+	workflow rule
+	if There is Update field using workflow - Before Trigger and After Trigger.	
+	Escaltion Rule
+	ROllup Summary and formula field execution
+	Crieteria base sharing rule
+	Database commit
+	Post commit logic
+	
+ How to call API from Batch ? Database.AllowsCallout
+ How to write test class for Rest API Callout? Implements HttpCalloutMock
+ What is significance of JWT or Access token ? Oauth. To Authorised another system in Salesforce.
+ What are the function available in validation  rule/formula fields ? 
+ - DateTime(TODAY,WEEKDAY,YEAR, DAY,MONTH,HOUR,MINUTE, SECOND,Millisecond) 
+ - Logical(AND, IF ,CASE, ISBLANK,ISNULL,ISNUMBER,ISNEW,NOT ,OR) 
+ - Math(ABS,Ceiling,floor,Distance,Long,Max,min,mod,round,SQRT) 
+ - Text(Left,Right,upper,lower,lpad,rpad,ispickal,includes,len,text,trim,substitute,contains,find) 
+ - Adavanced(Currencyrate,ischanged,REGEX,vlookup)
+ Formula field has depth upto 15 
+ How to call Class and pass parameter from Processbuilder?
+	@InvocableMethod and pass parameter using set apex variable
+	
+ What is significance of continuation callout?- 
+	Long running callout from visualforce page. 
+	3 async callout in single continuation. 
+	Make simultaneous callout. 
+	chaining async callout.	
+ What is External Object ?
+	External objects are similar to custom objects, but external object record data is stored outside your Salesforce organization.
+	... Each external object is associated with an external data source definition in your Salesforce organization. 
+	An external data source specifies how to access an external system.
+What is big Object? massive amount of record can strore. Billions. __b and you canot create Big object directly. You have to use metadata with three files.
+	
+What is  the Difference between Workflow and visual flow?
+What is difference between Workflow and Process builder?
+	Workflow 
+		Immediate calling workflow/
+		Time dependent workflow
+		it has four major operation here .
+			Send Mail
+			Create Task
+			Update field
+			outbound message : end point url: Criteria: User Send By :
+		It is basically worked on single object.
+		Run in system Mode		
+	Process builder 
+	
+		The Process start when	
+			Record Change
+			A platform event occur
+			Its invoked by another process		
+			
+		Action:
+			Apex
+			Create Record
+			Update Record
+			Flow
+			Process
+			Email Alert
+			Post to chatter
+			Quick Action
+			Submit for approval			
+				Used multiple object here. 
+		It is basically worked on multiple objects. You can not send outbound message in Process builder
+		Process Builder runs in the system mode so the object and field level permissions both will be ignored for the user who triggers the Process.
+		
+ What is difference between Process builder and Visual flow ?
+	System mode: – In which the object and field-level permissions of the current user are ignored.
+	User mode: – In which the permissions, field-level security, and sharing rules of the current user are enforced.
+	Flow runs in user mode.
+	Process Builder runs in system mode.
+	When you launch a Flow using the Process Builder, then it will run in system mode.
+ What is recursive workflow rule? How to avoid it?
+ 
+ What is Soql injection? How to avaoid it? - Vulnarability 
+	Static queries with bind variables
+	String.escapeSingleQuotes()
+	Type casting
+	Replacing characters
+	Whitelisting
+ scenario based question?
+ 
+ show and hide three field on UI on the basis of picklist value change? by OOB - record type and process builder 
+ Account and contact has check box  mystatus field - when user change contact check box then account check box will need to update? Process builder 
+ When user click  on custom button then new page will open. On that page you have another Button , 
+ on click of this button one popup(confirmation box) will open. 
+ when user click on ok then current page should be closed and standard page should be open again? Window.close(); window.parent.location. Cofirmation box. 
+
+Exposed Api :
+@RestResource(urlmapping='/getAllLead/')
+global with sharing class exposeMyApi
+{
+   @httpGet//@httpPost//@httpDelete//@HttpDelete//@HttpPut
+   global static List<lead> getAllLead()
+   {          RestRequest req = RestContext.request;
+        RestResponse res = RestContext.response;
+        String accountId = req.requestURI.substring(req.requestURI.lastIndexOf('/')+1);
+        Account result = [SELECT Id, Name, Phone, Website FROM Account WHERE Id = :accountId];
+        return result;
+   }
+}
+=========================================
+Contnuation : Long running api callout from Visualforce page 
+	VF -> App Server -> Continuation server -> Internet -> Webservice
+	HttpRequest req=new HttpRequest();
+	req.setEndPoint();
+	req.setMethod();
+	req.setHeader();
+	req.setTimeout();
+	req.setBody();
+	Continuation con = new Continuation();
+	con.continuationMethod="ProcessResponse";
+	con.addHttpdRequest(req);
+	Public sObject ProcessResponse()
+	{
+	  HttpResponse res=continuation.getResponse();
+	  return res.getBody();
+	}
+	
+==================================================================================
+
+Continuation Callout from Lightning Component
+
+public with sharing class SampleContinuationClass {
+    // Callout endpoint as a named credential URL
+    // or, as shown here, as the long-running service URL
+    private static final String LONG_RUNNING_SERVICE_URL =
+        '<insert your callout URL here>';
+    
+    // Action method
+    @AuraEnabled(continuation=true cacheable=true)
+    public static Object startRequest() {
+      // Create continuation. Argument is timeout in seconds.
+      Continuation con = new Continuation(40);
+      // Set callback method
+      con.continuationMethod='processResponse';
+      // Set state
+      con.state='Hello, World!';
+      // Create callout request
+      HttpRequest req = new HttpRequest();
+      req.setMethod('GET');
+      req.setEndpoint(LONG_RUNNING_SERVICE_URL);
+      // Add callout request to continuation
+      con.addHttpRequest(req);
+      // Return the continuation
+      return con;
+    }
+    
+    // Callback method
+    @AuraEnabled(cacheable=true)
+    public static Object processResponse(List<String> labels, Object state) {
+      // Get the response by using the unique label
+      HttpResponse response = Continuation.getResponse(labels[0]);
+      // Set the result variable
+      String result = response.getBody();
+      return result;
+    }
+}
+
+
+==================================================================================
+SOAP - exposed
+	global with sharing class MySoapWebService
+	{
+	  webservice static Account getAccount()	  {
+	   return [select Id,Name from Account limit 1];
+	  }
+	}================================================
+Apex Batch
+Queueable 
+Future
+Trigger
+
+Exception
+  AsyncException
+  DMLException  CalloutException
+  EmailException
+  ExternalObjectException
+  QueryException
+  ListException
+  MathException
+  LimitException
+  InvalidParameteralueException
+  NoSuchElementException
+  NullPointerReferenceException
+  RequiredFeatureMissingException
+  NoDataFoundException
+  NoAccessException
+  SerachException
+  StringException
+  TypeException
+  XML
+  JSON
+  SerializationException
+  SecurityException
+  VisualforceException
+  -----------------------------
+  getMessage()
+  initcause()
+  getLineNumber();
+  getStackTtraceString();  
+===========================================================
+future Method
+ Asynchronus callback when resource will be available
+ Increase governor limit - 200 soql 
+ callout api - @future(callout=true)
+ method should be static
+ Parameter sholud be primitive datatype,arrays of primitive data types, or collections of primitive data types
+ return type should be Void
+ call out from trigger @future(callout=true)
+ can not call from VF
+ can not call from future method
+ can not call from batch Apex
+ 50 future method in one transaction
+ you can perform DML before Future method execution
+ 
+ =========================================================
+ Batch Apex // 100 batch job
+ Database.Batchable,Database.Stateful,Database.AllowsCallouts, Database.RaisesPlatformEvent
+ start(Database.Querylocator),execute,finish(All methods are global and compulsary)
+ =========================================================
+ global class MyBatchClass implement Database.Batchable<sObject>
+ {
+      public Database.Querylocator Start(database.batchableContext bc)//50miliion
+	  {
+	    return Database.getQuerylocator(Query);//10000
+	  }
+	  public void execute(Database.batchableContext bc,List<sObject> scope)
+	  {
+	    //logic is here
+	  }
+	  public void finish(Database.batchableContext bc)
+	  {
+	   AsyncApexJob obj=[Select Id, Name, nouofError, jobProcessed from AsyncApexjob wnhere Id =: bc.getJobId()];
+	   //send mail
+	  } 
+ }
+=====================================================================
+ Scheduler
+ global class scheduleBatch implements Scheduleble
+ { 
+     public void execute(ScheduleableContext sc)
+	 {
+	    MyBatchClass obj=new MyBatchClass();
+		database.executebatch(obj);
+	 }    
+ }
+=====================================================================
+Queueable = future+batch
+chaining job
+Allow all datatype as parameter
+Monitoring job
+System.enquejob();
+=====================================================================
+What are collection and type of collection
+Collection is group of multiple ellements. List , Set, Map
+====================================================================Backup of salesforc/schedule export?setup->Data Management->Data Export ->Schedule Export. there should be attachment slection facility. Worlflow action => Immediate action/Time dependent
+ Render: show / hide certain component
+ Renderer: rfresh particular area of page
+ RenderAs: vf to pdf
+ Controller -> Std, Custom and extension access url parameter => $CurrentPage.Parameteres.ParameterName DataTable => write css PageBlockTable => std stylesheet 
+ object which can not be imported using import wizard? account, contact, lead , solution, custom object =>
+======================================================================================================================
+Sharing Record by following ways?
+Role Heirarchy
+	Setup->ManageUser->role->Setup role->click on add role->provide name and save
+OWD :
+	Define base line setting of orgnisation
+	Private
+	Public read only
+	Public read write
+	Public read/write/transfer (case and lead)
+	Public full access(campaign)
+	View only/No access/ Use (pricebook)
+	Controll by Parent	
+Manual Sharing
+Apex sharing
+Criteria based sharing rule
+
+
+=====================================================================================================================
+Creating Parent and Child Records in a Single Statement Using Foreign Keys
+public class ParentChildSample {
+    public static void InsertParentChild() {
+        Date dt = Date.today();
+        dt = dt.addDays(7);
+		
+        Opportunity newOpportunity = new Opportunity(
+            Name='OpportunityWithAccountInsert',
+            StageName='Prospecting',
+            CloseDate=dt);
+        
+        // Create the parent reference.
+        // Used only for foreign key reference
+        // and doesn't contain any other fields.
+        Account accountReference = new Account(
+            MyExtID__c='SAP111111');                
+        newOpportunity.Account = accountReference;
+        
+        // Create the Account object to insert.
+        // Same as above but has Name field.
+        // Used for the insert.
+        Account parentAccount = new Account(
+            Name='Hallie',
+            MyExtID__c='SAP111111');      
+        
+        // Create the account and the opportunity.
+        Database.SaveResult[] results = Database.insert(new SObject[] {
+            parentAccount, newOpportunity });
+        
+        // Check results.
+        for (Integer i = 0; i < results.size(); i++) {
+            if (results[i].isSuccess()) {
+            System.debug('Successfully created ID: '
+                  + results[i].getId());
+            } else {
+            System.debug('Error: could not create sobject '
+                  + 'for array element ' + i + '.');
+            System.debug('   The error reported was: '
+                  + results[i].getErrors()[0].getMessage() + '\n');
+            }
+        }
+    }
+}
+
+Trigger for Roll up summary
+I know this is weird I can achieve this using Roll up summary .But what I want is to achieve this using trigger.
+I want to write a trigger on Account ,which is having a field named Count__c .I want to autopopulate the nos of Contacts associated with that Account
+
+
+Send an automatic birthday email to Contacts via Workflow Rules

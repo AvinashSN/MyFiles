@@ -1,0 +1,50 @@
+Workbench URL (POST) /services/data/v46.0/composite/tree/User/
+
+{
+"records" :[{
+    "attributes" : {"type" : "User", "referenceId" : "ref1"},
+    "FirstName":"Avi",
+	"LastName":"Nar",
+	"ContactID":"0030K000023MfsH",
+	"ProfileID":"00e28000001MQGYAA4",
+	"Username":"yash@gmail.com",
+	"Email":"yash@gmail.com",
+	"Alias":"yash",
+	"TimeZoneSidKey":"America/Los_Angeles",
+"LocaleSidKey":"en_US",
+"EmailEncodingKey":"ISO-8859-1",
+"LanguageLocaleKey":"en_US"
+	
+    },
+	{
+    "attributes" : {"type" : "User", "referenceId" : "ref2"},
+    "FirstName":"Avi",
+	"LastName":"Narn",
+	"ContactID":"0032800000Hd02t",
+	"ProfileID":"00e28000001MQGYAA4",
+	"Username":"yash1@gmail.com",
+	"Email":"yash1@gmail.com",
+	"Alias":"yash1",
+	"TimeZoneSidKey":"America/Los_Angeles",
+"LocaleSidKey":"en_US",
+"EmailEncodingKey":"ISO-8859-1",
+"LanguageLocaleKey":"en_US"
+	
+    },
+	{
+    "attributes" : {"type" : "User", "referenceId" : "ref3"},
+    "FirstName":"Avi",
+	"LastName":"Narnaq",
+	"ContactID":"0032800000Hd02k",
+	"ProfileID":"00e28000001MQGYAA4",
+	"Username":"yash2@gmail.com",
+	"Email":"yash2@gmail.com",
+	"Alias":"yash2",
+	"TimeZoneSidKey":"America/Los_Angeles",
+"LocaleSidKey":"en_US",
+"EmailEncodingKey":"ISO-8859-1",
+"LanguageLocaleKey":"en_US"
+	
+    }
+	]
+}

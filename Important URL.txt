@@ -1,0 +1,20 @@
+UAT : pinnacleadmin@genpact.com.uat 
+PWD : Genpact@1234
+
+bhuvneshwar.jasrotia@genpact.com.pinnacleuat 
+CMR Mirror ID: 400205850
+
+CMR URL: https://genpact-smartit.onbmc.com/smartit/app/#/ 
+
+APP URL:https://projects.headstrong.com/eproject
+APP URL:https://projects.headstrong.com/OTS
+APP URL:https://projects.headstrong.com/projectpid
+
+
+
+
+HSN Changes
+
+https://genpact.lightning.force.com/lightning/r/GP_Project__c/a0k90000017SBqzAAG/view?0.source=alohaHeader
+
+\\182.95.42.22 ---  Printer Url

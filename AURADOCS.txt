@@ -1,0 +1,91 @@
+Javascript API :
+	$A
+		CreateComponent, 
+		CreateComponents,
+		enqueAction, 
+		error, 
+		get($A.get("$Label.section.key")),
+		getCallback, 
+		getComponent,
+		getReference
+		getRoot,
+		getToken,
+		log, 
+		reportError,
+		Set, 
+		warning
+	Action 
+		getError,
+		getName,
+		getParam,
+		getParams,
+		getReturnValue,
+		getState,
+		isBackground,
+		setAbortable,
+		setBackground,
+		setCallback,setParam,
+		setParams,setStorable
+	Events
+		fire
+		getEventType
+		getName
+		getParam
+		getParams
+		getPhase
+		getSource
+		getSourceEvent
+		getType		pause
+		preventDefault
+		resume
+		setParam
+		setParams
+		stopPropagation
+	Util
+		addClass
+		getBooleanValue
+		hasClass
+		isArray
+		isEmpty
+		isObject
+		isUndefined
+		isUndefinedOrNull
+		removeClass
+		toggleClass		
+		Interfaces
+			force
+				appHostable
+				hasRecordId
+				hasSObjectName
+				lightningQuickAction
+				lightningQuickActionWithoutHeader
+				recordTab
+			forceCommunity
+				availableForAllPageTypes
+				layout
+				profileMenuInterface
+				searchInterface
+				themeLayout	
+<aura:application extends="ltng:outApp">
+    <aura:dependency resource="c:EMICalculator" />
+    <aura:dependency resource="c:TWLoanCalculator" />
+    <aura:dependency resource="c:ALEmiCalculator" />
+</aura:application>
+<aura:application extends="force:slds">
+    <c:GlobalSearch />	
+</aura:application>
+<aura:application access="GLOBAL" extends="ltng:outApp">
+    <aura:dependency resource="c:ApplicationContainer"/> 
+    <aura:dependency resource="markup://force:*" type="EVENT"/>
+    <aura:dependency resource="markup://lightning:openFiles" type="EVENT"/>
+    <aura:dependency resource="markup://force:showToast" type="EVENT"/>
+    <aura:dependency resource="markup://c:RelayEvent" type="EVENT"/>
+</aura:application>
+		
+		
+		
+		
+		
+		
+		
+		
